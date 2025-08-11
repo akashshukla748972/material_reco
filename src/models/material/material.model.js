@@ -7,11 +7,11 @@ const materialSchema = new Schema(
     category: { type: String, default: "" },
 
     unit: { type: String, enum: ["nos", "km"], default: "nos" },
-    openingStock: { type: Number, default: 0 },
+    stock: { type: Number, default: 0 },
     currentStock: { type: Number, default: 0 },
 
     unitPrice: { type: Number, default: 0 },
-    totalValue: { type: Number, default: 0 },
+    totalAmount: { type: Number, default: 0 },
   },
   { timestamps: true }
 );
