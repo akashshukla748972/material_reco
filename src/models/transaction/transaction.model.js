@@ -20,6 +20,7 @@ const transactionSchema = new Schema(
     transactionDate: { type: Date, default: Date.now },
 
     vendorId: { type: String },
+    partyName: { type: String },
     city: { type: String },
     circle: { type: String },
   },
