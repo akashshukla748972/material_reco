@@ -3,6 +3,7 @@ import cors from "cors";
 
 import errorHandler from "./src/middlewares/errorHandler.js";
 import indexRouter from "./src/routes/index.js";
+import CustomError from "./src/utils/CustomError.js";
 
 const app = express();
 
@@ -11,6 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.use("/api", indexRouter);
+app.use((req, res, next) => {
+  return next(new CustomError("Page not found.", 404));
+});
 
 app.use(errorHandler);
 
